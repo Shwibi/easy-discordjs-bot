@@ -1,4 +1,4 @@
-# easy-discordjs-bot/v1.2.0
+# easy-discordjs-bot/v1.2.1
 
 Make discord bots with ease! <br>
 To make a simple discord bot, you can use this package to create basic discord bot commands! <br>
