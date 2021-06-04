@@ -33,11 +33,16 @@ These are all the updates for the current version!
 ## <a name="how-to-use"></a>How to use
 
 Reuire the module using require statement! <br>
-`const easyDjs = require("easy-discordjs-bot");` <br>
+
+```js
+const easyDjs = require("easy-discordjs-bot");
+```
 
 To create your bot, all you have to do is run the `Create()` function! <br>
 
-`easyDjs.Create(your_bot_token, your_bot_prefix, your_commands, your_callback)`
+```js
+easyDjs.Create(your_bot_token, your_bot_prefix, your_commands, your_callback);
+```
 
 Now, you may be wondering, what's a bot token? What commands? And what is back and why are you calling it?
 <br>
@@ -48,9 +53,12 @@ Once you're on the developer applications page, just create a new app. Then go t
 What are the commands? <br>
 There is an inbuilt class for commands! Here's how it works: <br>
 
-```
+```js
 const easyDjs = require("easy-discordjs-bot");
-const myCommand = new easyDjs.Cmd("name", ["args"], function callback(message, args) {});
+const myCommand = new easyDjs.Cmd("name", ["args"], function callback(
+	message,
+	args
+) {});
 easyDjs.Create(token, "prefix", [myCommand], function callback(err) {});
 ```
 
@@ -68,7 +76,7 @@ The `Cmd` class has a few options you can add to make your life easier. <br>
 
 This one is straight forward. It makes the command reply the given text when the command is called. For example <br>
 
-```
+```js
 const easyDjs = require("easy-discordjs-bot");
 const myCommand = new easyDjs.Cmd("test").reply("Test!");
 easyDjs.Create(token, "?", [myCommand]);
@@ -80,9 +88,11 @@ This will make the bot reply with "Test!" when the user types "?test" message in
 
 This one, too, is straight forward. It sets the permissions for the command, basically telling the command that only people with specified permissions can use this command. Check Discord API Documentation for all the permissions. <br>
 
-```
+```js
 const easyDjs = require("easy-discordjs-bot");
-const myCommand = new easyDjs.Cmd("test").reply("Test!").set_permissions("ADMINISTRATOR");
+const myCommand = new easyDjs.Cmd("test")
+	.reply("Test!")
+	.set_permissions("ADMINISTRATOR");
 easyDjs.Create(token, "?", [myCommand]);
 ```
 
@@ -93,7 +103,7 @@ This will make the command only respond if the user using the command is an admi
 This makes the command delete the original call message when called. <br>
 For example, if user uses `?test` to call the test command, and you have the test command delete on call, it will delete the user `?test` message; <br>
 
-```
+```js
 const easyDjs = require("easy-discordjs-bot");
 const myCommand = new easyDjs.Cmd("test").reply("Test!");
 myCommand.delete_on_call();
@@ -104,12 +114,12 @@ easyDjs.Create(token, "?", [myCommand]);
 
 The args provided into the command, in order of occurence. Suppose you want the user to also pass in a name along with the test command, you can do so by passing ["name"] into the args property. This can only be used by your custom callback as such:
 
-```
+```js
 const easyDjs = require("easy-discordjs-bot");
 function myFunction(message, args) {
-  // args is an array of objects
-  const name = args.name;
-  message.channel.send(`Hello ${name}!`);
+	// args is an array of objects
+	const name = args.name;
+	message.channel.send(`Hello ${name}!`);
 }
 const myCommand = new easyDjs.Cmd("hello", ["name"], myFunction);
 easyDjs.Create(token, "?", [myCommand]);
@@ -131,7 +141,7 @@ NOTE: This feature is still in alpha release. Some of the things might not work 
 A new feature (from v1.0.4-alpha) is the ability to ask for user/channel mentions in args! \
 To do so, you can use the `@` and `#` keywords. For example:
 
-```
+```js
 const easyDjs = require("easy-discordjs-bot");
 function myFunction(message, args) {
 	const person = args.person;
@@ -182,7 +192,7 @@ Now you can install node modules! To install easy-discordjs-bot, run the followi
 This will install the module for you! Now that you have the module, you can create your bot! \
 In the js file you created, type in the following: \
 
-```
+```js
 const easyDjs = require("easy-discordjs-bot");
 ```
 
