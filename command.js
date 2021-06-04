@@ -30,17 +30,20 @@ class Cmd {
 	 * @param {Discord.Message} message
 	 */
 	call(message) {
-		if (this.delete_on_call) message.deletable ? message.delete : null;
+		if (this.deleteOnCall) {
+			if (message.deletable) message.delete();
+		}
 		const content = message.content.toLowerCase();
 		if (message.author.bot) return this.callback(message, ["@ERR"]);
 		let pCheck = true;
 		// Permissions check
-		for (let pC = 0; pC < this.permissions.length; pC++) {
-			if (!message.member.hasPermission(this.permissions[pC])) pCheck = false;
+		for (let pC = 0; pC < this.set_permissions.length; pC++) {
+			if (!message.member.hasPermission(this.set_permissions[pC]))
+				pCheck = false;
 		}
 		if (!pCheck) return;
 		const argReq = content.split(/\s/).slice(1);
-		let argFetch = [];
+		let argFetch = {};
 
 		if (this.args.length !== 0) {
 			if (this.args.length > argReq.length) {
@@ -50,9 +53,9 @@ class Cmd {
 					} as ${this.args.join(", ")}`
 				);
 			}
-			this.args.forEach((arg) => {
-				argFetch.push({ [arg]: argReq[i] });
-			});
+			for (let i = 0; i < this.args.length; i++) {
+				argFetch[this.args[i]] = argReq[i];
+			}
 		}
 
 		this.callback(message, argFetch); // Call user specified callback
@@ -76,7 +79,7 @@ class Cmd {
 	 * @param {Array} values Input which permissions that can use this command
 	 * @returns Command
 	 */
-	permissions(values) {
+	set_permissions(values) {
 		this.permissions = values;
 		return this;
 	}

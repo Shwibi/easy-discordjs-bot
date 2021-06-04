@@ -7,7 +7,7 @@ If you want to go the extra step, you can always implement your custom callback 
 [Commands](#commands)
 
 - [reply](#reply)
-- [permissions](#permissions)
+- [set_permissions](#permissions)
 - [delete on call](#delete)
 - [args and callback](#args_callback)
 
@@ -35,8 +35,8 @@ There is an inbuilt class for commands! Here's how it works: <br>
 
 ```
 const easyDjs = require("easy-discord-bot");
-const myCommand = new easyDjs.Cmd("name", ["args"], callback(message, args) {});
-easyDjs.Create(token, "prefix", [myCommand], callback(err) {});
+const myCommand = new easyDjs.Cmd("name", ["args"], function callback(message, args) {});
+easyDjs.Create(token, "prefix", [myCommand], function callback(err) {});
 ```
 
 You need to create your own commands, to do that you can use the `Cmd` class inbuilt. Check Commands section for more info. <br>
@@ -61,13 +61,13 @@ easyDjs.Create(token, "?", [myCommand]);
 
 This will make the bot reply with "Test!" when the user types "?test" message in a channel. <br>
 
-### <a name="permissions"></a>permissions(Array)
+### <a name="permissions"></a>set_permissions(Array)
 
 This one, too, is straight forward. It sets the permissions for the command, basically telling the command that only people with specified permissions can use this command. Check Discord API Documentation for all the permissions. <br>
 
 ```
 const easyDjs = require("easy-discord-bot");
-const myCommand = new easyDjs.Cmd("test").reply("Test!").permissions("ADMINISTRATOR");
+const myCommand = new easyDjs.Cmd("test").reply("Test!").set_permissions("ADMINISTRATOR");
 easyDjs.Create(token, "?", [myCommand]);
 ```
 

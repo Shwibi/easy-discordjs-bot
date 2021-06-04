@@ -9,7 +9,7 @@ function Create(token, prefix, commands, callback) {
 	callback =
 		callback ||
 		function non(err) {
-			throw err;
+			if (err) throw err;
 		};
 	prefix = prefix || PREFIX;
 	Raw.BeginBot(token, (err, client) => {
