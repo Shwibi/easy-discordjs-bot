@@ -112,11 +112,11 @@ The callback is always triggered, while passing the message and args fetched. So
 
 ## <a name="scratch"></a> How to build one from scratch
 
-Alright, so you're new. You have no clue what the above said things mean. The questions in your mind are, "How do I create a file?" "How do I get this module?" "How do I code" "Is it in javscript?" "What is javscript?" "Help! Javscript cannot run!" "Help! How do I run the beautiful code I made?" and possibly "Where is my shoe?" \
+Alright, so you're new. You have no clue what the above said things mean. The questions in your mind are, "How do I create a file?" "How do I get this module?" "How do I code" "Is it in javacript?" "What is javacript?" "Help! javacript cannot run!" "Help! How do I run the beautiful code I made?" and possibly "Where is my shoe?" \
 This section will answer those questions. Except for the shoe. Look for it under your desk. \
-So, getting started with javscript. You can look at the official JS website [here](https://www.javascript.com/) \
-Originally, javscript only ran in browsers. But, after the introduction of [NodeJS](https://nodejs.org/en/), Javscript was much more! \
-You could now run javscript _outside_ of browsers! How cool is that? Okay, it's nerdy. But still. \
+So, getting started with javacript. You can look at the official JS website [here](https://www.javascript.com/) \
+Originally, javacript only ran in browsers. But, after the introduction of [NodeJS](https://nodejs.org/en/), javacript was much more! \
+You could now run javacript _outside_ of browsers! How cool is that? Okay, it's nerdy. But still. \
 So, how do you get started? all you need is to download nodejs! You can do so by going on their official website [NodeJs](https://nodejs.org/en/) and clicking the "LTS" download. Then go through and install it. _Yes, it's free._ \
 Now that you've installed node.js, you can get started! That's the theory, at least. The general way is to download a code editor. The most preferred nowadays is [Visual Studio Code](https://code.visualstudio.com/download) \
 Now that you have Node.JS and Visual Studio Code, you can finally get started! Hooray! \

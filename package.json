@@ -16,7 +16,7 @@
 		"djs",
 		"dbot"
 	],
-	"author": "Shwibi",
+	"author": "shwi",
 	"license": "ISC",
 	"dependencies": {
 		"discord.js": "^12.5.3"
