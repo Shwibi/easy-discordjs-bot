@@ -20,5 +20,9 @@
 	"license": "ISC",
 	"dependencies": {
 		"discord.js": "^12.5.3"
+	},
+	"homepage": "https://github.com/Shwibi/easy-discord-bot#readme",
+	"bugs": {
+		"url": "https://github.com/Shwibi/easy-discord-bot/issues"
 	}
 }
