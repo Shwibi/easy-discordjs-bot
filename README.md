@@ -125,6 +125,33 @@ Bot: Hello shwi!
 NOTE: The args is an object with all the args along with their names, so the above args object would be `{ name: "shwi" }` \
 The callback is always triggered, while passing the message and args fetched. So you can always add your own custom callbacks whenever you want ;) <br>
 
+## <a name="mentions"></a> Mentioning users/channels in args
+
+NOTE: This feature is still in alpha release. Some of the things might not work properly, they are being worked on. \
+A new feature (from v1.0.4-alpha) is the ability to ask for user/channel mentions in args! \
+To do so, you can use the `@` and `#` keywords. For example:
+
+```
+const easyDjs = require("easy-discordjs-bot");
+function myFunction(message, args) {
+  const person = args.person;
+  message.reply("Mentioned " + person.name);
+};
+const myCommand = new easyDjs.Cmd("mention", ["@person"], myFunction);
+easyDjs.create(token, "?", [myCommand]);
+```
+
+This code will reply "Mentioned person-name" whenver a user mentions a person in the command. So:
+
+```
+User: ?mention
+Bot: Invalid arguments provided! Minimum: 1 as @person
+User: ?mention @Shwi
+Bot: Mentioned Shwi
+```
+
+The same goes for channels, instead of `@` use `#`. You can ask for as many users and channels as you want and at as many places as you want.
+
 ## <a name="scratch"></a> How to build one from scratch
 
 Alright, so you're new. You have no clue what the above said things mean. The questions in your mind are, "How do I create a file?" "How do I get this module?" "How do I code" "Is it in javacript?" "What is javacript?" "Help! javacript cannot run!" "Help! How do I run the beautiful code I made?" and possibly "Where is my shoe?" \
