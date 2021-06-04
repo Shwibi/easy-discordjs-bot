@@ -134,20 +134,26 @@ To do so, you can use the `@` and `#` keywords. For example:
 ```
 const easyDjs = require("easy-discordjs-bot");
 function myFunction(message, args) {
-  const person = args.person;
-  message.reply("Mentioned " + person.name);
-};
-const myCommand = new easyDjs.Cmd("mention", ["@person"], myFunction);
-easyDjs.create(token, "?", [myCommand]);
+	const person = args.person;
+	message.reply("Mentioned " + person.user.username);
+	message.reply("Also mentioned " + args.person_two.user.username);
+}
+const myCommand = new easyDjs.Cmd(
+	"mention",
+	["@person", "#channel", "help", "@person_two"],
+	myFunction
+);
+easyDjs.Create(token, "?", [myCommand]);
 ```
 
 This code will reply "Mentioned person-name" whenver a user mentions a person in the command. So:
 
 ```
 User: ?mention
-Bot: Invalid arguments provided! Minimum: 1 as @person
-User: ?mention @Shwi
+Bot: Invalid arguments provided! Minimum: 4 as @person, #channel, help, @person_two
+User: ?mention @Shwi #log nohelp @Alt
 Bot: Mentioned Shwi
+Bot: Also mentioned Alt
 ```
 
 The same goes for channels, instead of `@` use `#`. You can ask for as many users and channels as you want and at as many places as you want.

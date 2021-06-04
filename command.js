@@ -54,23 +54,21 @@ class Cmd {
 			for (let i = 0; i < this.args.length; i++) {
 				if (this.args[i].toLowerCase().startsWith("@")) {
 					// Asks for a user mention from the user
-					if (!message.mentions?.members?.array[userMentions])
+					if (!message.mentions?.members?.array()[userMentions])
 						return this.invalid_args(message);
 					argFetch[this.args[i].slice(1)] =
-						message.mentions.members.array[userMentions];
+						message.mentions.members.array()[userMentions];
 					userMentions++;
-					continue;
-				}
-				if (this.args[i].toLowerCase().startsWith("#")) {
+				} else if (this.args[i].toLowerCase().startsWith("#")) {
 					// Asks for a channel mention from the user
-					if (!message.mentions?.channels?.array[channelMentions])
+					if (!message.mentions?.channels?.array()[channelMentions])
 						return this.invalid_args(message);
 					argFetch[this.args[i].slice(1)] =
-						message.mentions.channels.array[channelMentions];
+						message.mentions.channels.array()[channelMentions];
 					channelMentions++;
-					continue;
+				} else {
+					argFetch[this.args[i]] = argReq[i];
 				}
-				argFetch[this.args[i]] = argReq[i];
 			}
 		}
 
