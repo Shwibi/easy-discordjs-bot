@@ -1,6 +1,6 @@
 {
 	"name": "easy-discordjs-bot",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Create discord bots with ease!",
 	"main": "index.js",
 	"scripts": {
@@ -21,8 +21,8 @@
 	"dependencies": {
 		"discord.js": "^12.5.3"
 	},
-	"homepage": "https://github.com/Shwibi/easy-discord-bot#readme",
+	"homepage": "https://github.com/Shwibi/easy-discordjs-bot#readme",
 	"bugs": {
-		"url": "https://github.com/Shwibi/easy-discord-bot/issues"
+		"url": "https://github.com/Shwibi/easy-discordjs-bot/issues"
 	}
 }
