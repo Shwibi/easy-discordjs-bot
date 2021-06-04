@@ -1,4 +1,4 @@
-# easy-discordjs-bot
+# easy-discordjs-bot/v1.0.4-alpha
 
 Make discord bots with ease! <br>
 To make a simple discord bot, you can use this package to create basic discord bot commands! <br>
@@ -6,6 +6,7 @@ If you want to go the extra step, you can always implement your custom callback 
 
 [Installation](#install) \
 [How to Use](#how-to-use) \
+[Updates](#updates) \
 [Commands](#commands)
 
 - [reply](#reply)
@@ -22,6 +23,12 @@ This module is created on the [discord.js](https://discord.js.org/#/) module by 
 ```
 npm i easy-discordjs-bot
 ```
+
+## <a name="updates"></a>Updates
+
+These are all the updates for the current version!
+
+1. Added users and channels mentions for args (outputs the respective class)
 
 ## <a name="how-to-use"></a>How to use
 

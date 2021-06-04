@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 class Cmd {
 	/**
 	 * Create a new command using call command! args and callback are optional
-	 * Args: Input all args required as array: ["name", "id"] These will be sent back with their response in callback
+	 * Args: Input all args required as array: ["name", "id"] These will be sent back with their response in callback, Use @user to ask for a user mention, Use #channel for a channel mention
 	 * Callback: On call (message, args);
 	 */
 	constructor(caller, args, callback) {
@@ -36,6 +36,8 @@ class Cmd {
 		const content = message.content.toLowerCase();
 		if (message.author.bot) return this.callback(message, ["@ERR"]);
 		let pCheck = true;
+		let userMentions = 0;
+		let channelMentions = 0; // Keeps track of how many user/channels mentioned to pass in args correctly
 		// Permissions check
 		for (let pC = 0; pC < this.set_permissions.length; pC++) {
 			if (!message.member.hasPermission(this.set_permissions[pC]))
@@ -47,13 +49,27 @@ class Cmd {
 
 		if (this.args.length !== 0) {
 			if (this.args.length > argReq.length) {
-				return message.channel.send(
-					`Invalid arguments provided! Minimum: ${
-						this.args.length
-					} as ${this.args.join(", ")}`
-				);
+				return this.invalid_args(message);
 			}
 			for (let i = 0; i < this.args.length; i++) {
+				if (this.args[i].toLowerCase().startsWith("@")) {
+					// Asks for a user mention from the user
+					if (!message.mentions?.members?.array[userMentions])
+						return this.invalid_args(message);
+					argFetch[this.args[i].slice(1)] =
+						message.mentions.members.array[userMentions];
+					userMentions++;
+					continue;
+				}
+				if (this.args[i].toLowerCase().startsWith("#")) {
+					// Asks for a channel mention from the user
+					if (!message.mentions?.channels?.array[channelMentions])
+						return this.invalid_args(message);
+					argFetch[this.args[i].slice(1)] =
+						message.mentions.channels.array[channelMentions];
+					channelMentions++;
+					continue;
+				}
 				argFetch[this.args[i]] = argReq[i];
 			}
 		}
@@ -91,6 +107,14 @@ class Cmd {
 	delete_on_call() {
 		this.deleteOnCall = true;
 		return this;
+	}
+
+	invalid_args(message) {
+		message.channel.send(
+			`Invalid arguments provided! Minimum: ${
+				this.args.length
+			} as ${this.args.join(", ")}`
+		);
 	}
 }
 
