@@ -1,4 +1,4 @@
-# easy-discord-bot
+# easy-discordjs-bot
 
 Make discord bots with ease! <br>
 To make a simple discord bot, you can use this package to create basic discord bot commands! <br>
@@ -18,7 +18,7 @@ This module is created on the [discord.js](https://discord.js.org/#/) module by 
 ## <a name="how-to-use"></a>How to use
 
 Reuire the module using require statement! <br>
-`const easyDjs = require("easy-discord-bot");` <br>
+`const easyDjs = require("easy-discordjs-bot");` <br>
 
 To create your bot, all you have to do is run the `Create()` function! <br>
 
@@ -34,7 +34,7 @@ What are the commands? <br>
 There is an inbuilt class for commands! Here's how it works: <br>
 
 ```
-const easyDjs = require("easy-discord-bot");
+const easyDjs = require("easy-discordjs-bot");
 const myCommand = new easyDjs.Cmd("name", ["args"], function callback(message, args) {});
 easyDjs.Create(token, "prefix", [myCommand], function callback(err) {});
 ```
@@ -54,7 +54,7 @@ The `Cmd` class has a few options you can add to make your life easier. <br>
 This one is straight forward. It makes the command reply the given text when the command is called. For example <br>
 
 ```
-const easyDjs = require("easy-discord-bot");
+const easyDjs = require("easy-discordjs-bot");
 const myCommand = new easyDjs.Cmd("test").reply("Test!");
 easyDjs.Create(token, "?", [myCommand]);
 ```
@@ -66,7 +66,7 @@ This will make the bot reply with "Test!" when the user types "?test" message in
 This one, too, is straight forward. It sets the permissions for the command, basically telling the command that only people with specified permissions can use this command. Check Discord API Documentation for all the permissions. <br>
 
 ```
-const easyDjs = require("easy-discord-bot");
+const easyDjs = require("easy-discordjs-bot");
 const myCommand = new easyDjs.Cmd("test").reply("Test!").set_permissions("ADMINISTRATOR");
 easyDjs.Create(token, "?", [myCommand]);
 ```
@@ -79,7 +79,7 @@ This makes the command delete the original call message when called. <br>
 For example, if user uses `?test` to call the test command, and you have the test command delete on call, it will delete the user `?test` message; <br>
 
 ```
-const easyDjs = require("easy-discord-bot");
+const easyDjs = require("easy-discordjs-bot");
 const myCommand = new easyDjs.Cmd("test").reply("Test!");
 myCommand.delete_on_call();
 easyDjs.Create(token, "?", [myCommand]);
@@ -90,7 +90,7 @@ easyDjs.Create(token, "?", [myCommand]);
 The args provided into the command, in order of occurence. Suppose you want the user to also pass in a name along with the test command, you can do so by passing ["name"] into the args property. This can only be used by your custom callback as such:
 
 ```
-const easyDjs = require("easy-discord-bot");
+const easyDjs = require("easy-discordjs-bot");
 function myFunction(message, args) {
   // args is an array of objects
   const name = args.name;
@@ -129,16 +129,16 @@ The npm stands for "Node Package Manager" which comes with nodejs (unless you ti
 The init stands for initialise. \
 The -y stands for yes to all the questions. The questions will come if you don't press the y. \
 NOTE: Make sure the name logged after you went with this command doesn't have any spaces, and is all lower caps. If not, you can open the package.json file (generated automatically in the same folder you are in) and change the name there. \
-Now you can install node modules! To install easy-discord-bot, run the following command: \
-`npm i easy-discord-bot` \
+Now you can install node modules! To install easy-discordjs-bot, run the following command: \
+`npm i easy-discordjs-bot` \
 This will install the module for you! Now that you have the module, you can create your bot! \
 In the js file you created, type in the following: \
 
 ```
-const easyDjs = require("easy-discord-bot");
+const easyDjs = require("easy-discordjs-bot");
 ```
 
-You can name the "easyDjs" anything. That's a variable. This statement imports the easy-discord-bot module for you. \
+You can name the "easyDjs" anything. That's a variable. This statement imports the easy-discordjs-bot module for you. \
 Now you can create a bot using the docs uptop! Yay!
 
 ### Thank you for visiting, have fun!
