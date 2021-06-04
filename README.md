@@ -14,6 +14,7 @@ If you want to go the extra step, you can always implement your custom callback 
 - [delete on call](#delete)
 - [args and callback](#args_callback)
 
+[Mentioning users and channels in args](#mentions) \
 [How to start from scratch (For absolute beginners to js and making bots)](#scratch)
 
 This module is created on the [discord.js](https://discord.js.org/#/) module by Discord. Please refer to its documentation for further advanced functionality. Yes, you can use both in this module. Yes, the `Discord` object is exported as `Discord` in the easy module. You can access it using `easyDjs.Discord`. :)
@@ -169,6 +170,11 @@ Bot: Also mentioned Alt
 The same goes for channels, instead of `@` use `#`. You can ask for as many users and channels as you want and at as many places as you want.
 
 ## <a name="scratch"></a> How to build one from scratch
+
+In short: \
+Download [NodeJS](https://nodejs.org/en/) > Download [Visual Studio Code](https://code.visualstudio.com/download) > In a folder of your choice, run `npm init -y` in console > run `npm i easy-discordjs-bot` in same console > run `code .` in same console > Start coding using the docs above
+
+---
 
 Alright, so you're new. You have no clue what the above said things mean. The questions in your mind are, "How do I create a file?" "How do I get this module?" "How do I code" "Is it in javacript?" "What is javacript?" "Help! javacript cannot run!" "Help! How do I run the beautiful code I made?" and possibly "Where is my shoe?" \
 This section will answer those questions. Except for the shoe. Look for it under your desk. \
