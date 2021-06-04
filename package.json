@@ -1,6 +1,6 @@
 {
 	"name": "easy-discordjs-bot",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Create discord bots with ease!",
 	"main": "index.js",
 	"scripts": {
