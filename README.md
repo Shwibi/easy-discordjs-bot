@@ -3,6 +3,8 @@
 Make discord bots with ease! <br>
 To make a simple discord bot, you can use this package to create basic discord bot commands! <br>
 If you want to go the extra step, you can always implement your custom callback ;) <br>
+
+[Installation](#install) \
 [How to Use](#how-to-use) \
 [Commands](#commands)
 
@@ -14,6 +16,12 @@ If you want to go the extra step, you can always implement your custom callback 
 [How to start from scratch (For absolute beginners to js and making bots)](#scratch)
 
 This module is created on the [discord.js](https://discord.js.org/#/) module by Discord. Please refer to its documentation for further advanced functionality. Yes, you can use both in this module. Yes, the `Discord` object is exported as `Discord` in the easy module. You can access it using `easyDjs.Discord`. :)
+
+## <a name="install"></a>Installation
+
+```
+npm i easy-discordjs-bot
+```
 
 ## <a name="how-to-use"></a>How to use
 
