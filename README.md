@@ -1,4 +1,4 @@
-# easy-discordjs-bot/v1.2.1
+# easy-discordjs-bot/v1.2.2-alpha.1
 
 Make discord bots with ease! <br>
 To make a simple discord bot, you can use this package to create basic discord bot commands! <br>
@@ -15,6 +15,7 @@ If you want to go the extra step, you can always implement your custom callback 
 - [args and callback](#args_callback)
 
 [Mentioning users and channels in args](#mentions) \
+[Setting a welcome message](#welcome) \
 [How to start from scratch (For absolute beginners to js and making bots)](#scratch)
 
 This module is created on the [discord.js](https://discord.js.org/#/) module by Discord. Please refer to its documentation for further advanced functionality. Yes, you can use both in this module. Yes, the `Discord` object is exported as `Discord` in the easy module. You can access it using `easyDjs.Discord`. :)
@@ -168,6 +169,42 @@ Bot: Also mentioned Alt
 ```
 
 The same goes for channels, instead of `@` use `#`. You can ask for as many users and channels as you want and at as many places as you want.
+
+## <a name="welcome"></a> Setting a welcome message
+
+**_Under production, alpha release._**
+`v1.2.2-alpha.1^`
+You can set a welcome message using the `Welcome(...)` function! It is firectly inside of the root module, aka:
+
+```js
+const easyDjs = require("easy-discordjs-bot");
+//... other code
+easyDjs.Welcome(welcome_message);
+//... other code
+easyDjs.Create(...);
+```
+
+You can pass in only the welcome message for now, and the bot will look for a channel that is named "welcome" (or includes the word welcome in it) and send the message there. \
+To mention a user, you can use the `@user` keyword. To mention the guild name, you can use the `@guild` keyword. \
+NOTE: You do NOT need to include anything in the `Create(...)` function. \
+So, for example:
+
+```js
+const easyDjs = require("easy-discordjs-bot");
+//... other code
+easyDjs.Welcome("Hello @user! Welcome to **@guild**!");
+//... other code
+easyDjs.Create(...);
+```
+
+This will send a message of a user joining a guild as follows:
+
+```txt
+Shwi joined the server 'Cool'
+Bot (in #welcome-new-people channel, or #welcome channel, etc.): Hello @Shwi! Welcome to **Cool**!
+```
+
+The `**Cool**` will be actually bold, as discord uses markdown for its messages. So it will look like **Cool** this.
 
 ## <a name="scratch"></a> How to build one from scratch
 
