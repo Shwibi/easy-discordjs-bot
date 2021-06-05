@@ -119,7 +119,7 @@ The args provided into the command, in order of occurence. Suppose you want the 
 ```js
 const easyDjs = require("easy-discordjs-bot");
 function myFunction(message, args) {
-	// args is an array of objects
+	// args is an object, not an array here
 	const name = args.name;
 	message.channel.send(`Hello ${name}!`);
 }
